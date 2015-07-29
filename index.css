@@ -1,0 +1,30 @@
+body {
+  padding-top: 50px;
+}
+
+#logo {
+  height:50px;
+  margin:-25px 20px -25px 10px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

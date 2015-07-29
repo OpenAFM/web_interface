@@ -1,0 +1,45 @@
+    <div class="container">
+      <div class="starter-template">
+        <h1>3D Suraface Plot</h1>
+        <p class="lead"></p>
+      </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script src="processing.min.js"></script>
+ 
+<script type="application/processing" id="script1">
+void setup() {
+  size(640, 400);
+  noLoop(); 
+}
+ 
+void draw() {
+  translate(width/2, height/2);
+  background(0);
+  stroke(150,250,200);
+  for (float y= -4; y<4; y+=0.035) {
+    for (float x = -4; x<4; x+=0.035) {
+      float z = sin(x*x + y*y) / (x*x + y*y);
+      float px = x*70+y*8;
+      float py = -z*120+y*30;
+      point(px, py);
+    }
+  }
+}
+</script>
+       <div id="plot-container">
+<canvas id="canvas1"></canvas>
+      </div>
+    </div>
+
+
+ 
+<script>
+ var script_text = document.getElementById('script1').text;
+ var canvas=document.getElementById('canvas1');
+ new Processing(canvas, script_text);
+</script>         
